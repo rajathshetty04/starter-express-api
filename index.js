@@ -3,7 +3,7 @@ const app = express()
 
 app.use(express.json())
 
-app.all('/', (req, res) => {
+app.get('/', (req, res) => {
     console.log("Just got a request!")
     res.send('Yo!')
 })
@@ -14,7 +14,7 @@ app.post('/examples', (req, res) => {
     name: req.body.name,
     age: req.body.age,
   };
-
+console.log(example)
   res.json(example);
 });
 
